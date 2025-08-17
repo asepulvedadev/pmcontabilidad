@@ -94,7 +94,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Name Field */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
             Nombre completo *
           </label>
           <Input
@@ -111,7 +111,7 @@ const ContactForm = () => {
 
         {/* Email Field */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
             Correo electrónico *
           </label>
           <Input
@@ -128,7 +128,7 @@ const ContactForm = () => {
 
         {/* Phone Field */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
             Teléfono *
           </label>
           <Input
@@ -145,7 +145,7 @@ const ContactForm = () => {
 
         {/* Service Type Field */}
         <div>
-          <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="serviceType" className="block text-sm font-medium text-slate-700 mb-2">
             Tipo de servicio *
           </label>
           <Select onValueChange={handleServiceTypeChange} value={serviceType}>
@@ -166,7 +166,7 @@ const ContactForm = () => {
 
         {/* Message Field */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
             Mensaje *
           </label>
           <Textarea
@@ -185,7 +185,7 @@ const ContactForm = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-blue-700 hover:bg-blue-800 text-white py-3 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <div className="flex items-center gap-2">
@@ -201,7 +201,7 @@ const ContactForm = () => {
         </Button>
 
         {/* Privacy Notice */}
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-xs text-slate-500 text-center">
           Al enviar este formulario, aceptas que nos pongamos en contacto contigo 
           para responder tu consulta. No compartiremos tu información con terceros.
         </p>
