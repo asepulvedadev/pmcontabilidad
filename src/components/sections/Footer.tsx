@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
-import Image from "next/image"
+import Logo from "@/components/ui/Logo"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -25,15 +25,8 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="flex items-center mb-4">
-              <Image
-                src="/logo-pmcontabilidad.png"
-                alt="PM Contabilidad"
-                width={140}
-                height={50}
-                className="h-12 w-auto"
-                priority
-              />
+            <div className="mb-4">
+              <Logo size="sm" priority />
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Soluciones contables modernas para impulsar el crecimiento de tu negocio. Nos enfocamos en la eficiencia y la claridad para darte tranquilidad financiera.
