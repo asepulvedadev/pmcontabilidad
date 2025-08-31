@@ -1,167 +1,116 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react"
+import { 
+  MessageCircle, 
+  ArrowRight
+} from "lucide-react"
 import ContactForm from "@/components/forms/ContactForm"
 
 const ContactSection = () => {
   return (
-    <section id="contacto" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="contacto" className="py-24 bg-gradient-to-br from-background via-background to-secondary/20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            ¿Listo para{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">
-              contactarnos
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6"
+          >
+            <MessageCircle className="w-4 h-4" />
+            Contacto Directo
+          </motion.div>
+          
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            Hablemos de tu{" "}
+            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Futuro Financiero
             </span>
-            ?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Estamos aquí para ayudarte con todas tus necesidades contables. 
-            Envíanos un mensaje y nos pondremos en contacto contigo en las próximas 24 horas.
+          
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Estamos listos para escucharte y transformar tu contabilidad. 
+            Completa el formulario o contáctanos directamente para comenzar tu camino hacia el éxito financiero.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                Información de contacto
-              </h3>
-              <p className="text-slate-600 mb-8 leading-relaxed">
-                Nuestro equipo de expertos contables está listo para atenderte. 
-                Puedes contactarnos a través de cualquiera de estos medios o 
-                llenar el formulario para una consulta más detallada.
-              </p>
-            </div>
-
-            {/* Contact Details */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">Teléfono</h4>
-                  <p className="text-slate-600">+52 (55) 1234-5678</p>
-                  <p className="text-slate-600">+52 (55) 8765-4321</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-slate-700 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">Correo electrónico</h4>
-                  <p className="text-slate-600">contacto@pmcontabilidad.com</p>
-                  <p className="text-slate-600">soporte@pmcontabilidad.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">Oficina</h4>
-                  <p className="text-slate-600">Av. Insurgentes Sur 1234</p>
-                  <p className="text-slate-600">Col. Del Valle, CDMX 03100</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-slate-900 mb-1">Horarios de atención</h4>
-                  <p className="text-slate-600">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                  <p className="text-slate-600">Sábados: 9:00 AM - 2:00 PM</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Additional Info */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-blue-700" />
-                </div>
-                <h4 className="font-semibold text-slate-900">Consulta gratuita</h4>
-              </div>
-              <p className="text-slate-600 text-sm">
-                Ofrecemos una consulta inicial sin costo para evaluar tus necesidades 
-                y proporcionarte la mejor solución contable para tu negocio.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl p-8 shadow-xl border border-slate-100"
-          >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                Envíanos un mensaje
-              </h3>
-              <p className="text-slate-600">
-                Completa el formulario y nos pondremos en contacto contigo
-              </p>
-            </div>
-            
-            <ContactForm />
-          </motion.div>
-        </div>
-
-        {/* Map or Additional CTA */}
+        {/* Contact Form */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="w-[90%] mx-auto"
         >
-          <div className="bg-gradient-to-r from-blue-700 to-blue-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              ¿Prefieres una llamada directa?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Si prefieres hablar directamente con uno de nuestros especialistas, 
-              puedes llamarnos directamente o agendar una cita en el horario que mejor te convenga.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="tel:+525512345678"
-                className="bg-white text-blue-700 hover:bg-slate-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:-translate-y-1 hover:shadow-lg"
-              >
-                Llamar ahora
-              </a>
-              <button
-                onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-700 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                Agendar cita
-              </button>
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-border/50 shadow-2xl relative overflow-hidden">
+              {/* Form Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/10 rounded-full blur-xl"></div>
+              
+              <div className="relative z-10">
+                <div className="text-center mb-10">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    className="w-16 h-16 bg-gradient-to-r from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg"
+                  >
+                    <MessageCircle className="w-8 h-8 text-white" />
+                  </motion.div>
+                  
+                  <h3 className="text-3xl font-bold text-foreground mb-3">
+                    Envíanos un Mensaje
+                  </h3>
+                  <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                    Completa el formulario y te contactaremos a la brevedad para discutir tus necesidades.
+                  </p>
+                </div>
+                
+                <ContactForm />
+              </div>
             </div>
+          </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-20"
+        >
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-border/50">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              ¿Listo para transformar tu contabilidad?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Únete a cientos de empresas que ya confían en nosotros para manejar sus finanzas 
+              de manera profesional y eficiente.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
+            >
+              Comenzar Ahora
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
           </div>
         </motion.div>
       </div>

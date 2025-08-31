@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { ThemeToggleButton } from "@/components/ThemeToggleButton"
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,13 +20,13 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-blue-700">
-              PM Contabilidad
+            <h1 className="text-2xl font-bold text-primary">
+              PM
             </h1>
           </div>
 
@@ -34,48 +35,48 @@ const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => scrollToSection("servicios")}
-                className="text-slate-700 hover:text-blue-700 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-foreground/80 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 Servicios
               </button>
               <button
                 onClick={() => scrollToSection("beneficios")}
-                className="text-slate-700 hover:text-blue-700 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-foreground/80 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 Beneficios
               </button>
               <button
                 onClick={() => scrollToSection("proceso")}
-                className="text-slate-700 hover:text-blue-700 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-foreground/80 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 Proceso
               </button>
               <button
                 onClick={() => scrollToSection("contacto")}
-                className="text-slate-700 hover:text-blue-700 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-foreground/80 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 Contacto
               </button>
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button and Theme Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
             <Button
               onClick={() => scrollToSection("contacto")}
-              className="bg-blue-700 hover:bg-blue-800 text-white"
             >
-              Consulta Gratuita
+              Agendar Cita
             </Button>
+            <ThemeToggleButton />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggleButton />
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              className="text-slate-700"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -92,37 +93,37 @@ const Navigation = () => {
             : "max-h-0 opacity-0 overflow-hidden"
         )}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-slate-200">
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border/50">
           <button
             onClick={() => scrollToSection("servicios")}
-            className="block w-full text-left px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-700 hover:bg-slate-50 rounded-md transition-colors"
+            className="block w-full text-left px-3 py-2 text-base font-medium text-foreground/80 hover:text-primary hover:bg-secondary rounded-md transition-colors"
           >
             Servicios
           </button>
           <button
             onClick={() => scrollToSection("beneficios")}
-            className="block w-full text-left px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-700 hover:bg-slate-50 rounded-md transition-colors"
+            className="block w-full text-left px-3 py-2 text-base font-medium text-foreground/80 hover:text-primary hover:bg-secondary rounded-md transition-colors"
           >
             Beneficios
           </button>
           <button
             onClick={() => scrollToSection("proceso")}
-            className="block w-full text-left px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-700 hover:bg-slate-50 rounded-md transition-colors"
+            className="block w-full text-left px-3 py-2 text-base font-medium text-foreground/80 hover:text-primary hover:bg-secondary rounded-md transition-colors"
           >
             Proceso
           </button>
           <button
             onClick={() => scrollToSection("contacto")}
-            className="block w-full text-left px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-700 hover:bg-slate-50 rounded-md transition-colors"
+            className="block w-full text-left px-3 py-2 text-base font-medium text-foreground/80 hover:text-primary hover:bg-secondary rounded-md transition-colors"
           >
             Contacto
           </button>
           <div className="pt-4">
             <Button
               onClick={() => scrollToSection("contacto")}
-              className="w-full bg-blue-700 hover:bg-blue-800 text-white"
+              className="w-full"
             >
-              Consulta Gratuita
+              Agendar Cita
             </Button>
           </div>
         </div>

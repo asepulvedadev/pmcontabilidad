@@ -5,6 +5,7 @@ import BenefitsSection from "@/components/sections/BenefitsSection"
 import WorkProcessSection from "@/components/sections/WorkProcessSection"
 import ContactSection from "@/components/sections/ContactSection"
 import Footer from "@/components/sections/Footer"
+import WhatsAppButton from "@/components/WhatsAppButton"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <WorkProcessSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }
