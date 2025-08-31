@@ -64,22 +64,12 @@ const ContactSection = () => {
               
               <div className="relative z-10">
                 <div className="text-center mb-10">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    viewport={{ once: true }}
-                    className="w-16 h-16 bg-gradient-to-r from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg"
-                  >
-                    <MessageCircle className="w-8 h-8 text-white" />
-                  </motion.div>
+                 
                   
                   <h3 className="text-3xl font-bold text-foreground mb-3">
                     Envíanos un Mensaje
                   </h3>
-                  <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                    Completa el formulario y te contactaremos a la brevedad para discutir tus necesidades.
-                  </p>
+                  
                 </div>
                 
                 <ContactForm />

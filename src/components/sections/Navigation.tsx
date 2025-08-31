@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ThemeToggleButton } from "@/components/ThemeToggleButton"
+import Image from "next/image"
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,9 +26,16 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-primary">
-              PM
-            </h1>
+            <div className="flex items-center">
+              <Image
+                src="/logo-pmcontabilidad.png"
+                alt="PM Contabilidad"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}
