@@ -26,5 +26,6 @@ export interface WorkStep {
   title: string
   description: string
   step: number
+  icon: string
 }
 

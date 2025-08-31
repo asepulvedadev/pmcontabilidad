@@ -113,7 +113,7 @@ const ContactForm = () => {
     initial: { width: 0 },
     animate: (progress: number) => ({ 
       width: `${progress}%`,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" as const }
     })
   }
 
