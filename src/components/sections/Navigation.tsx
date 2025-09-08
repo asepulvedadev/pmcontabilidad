@@ -21,6 +21,11 @@ const Navigation = () => {
     }
   }
 
+  const openContactModal = () => {
+    window.dispatchEvent(new Event("open-contact-modal"))
+    setIsMenuOpen(false)
+  }
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,9 +69,7 @@ const Navigation = () => {
 
           {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              onClick={() => scrollToSection("contacto")}
-            >
+            <Button onClick={openContactModal}>
               Agendar Cita
             </Button>
             <ThemeToggleButton />
@@ -121,10 +124,7 @@ const Navigation = () => {
             Contacto
           </button>
           <div className="pt-4">
-            <Button
-              onClick={() => scrollToSection("contacto")}
-              className="w-full"
-            >
+            <Button onClick={openContactModal} className="w-full">
               Agendar Cita
             </Button>
           </div>

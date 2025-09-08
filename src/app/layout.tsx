@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Inter, Manrope } from "next/font/google"
 import { ThemeProvider } from "@/components/ThemeProvider"
-import SplashScreen from "@/components/SplashScreen"
+import SplashGate from "@/components/SplashGate"
+import ContactModal from "@/components/ContactModal"
 import "./globals.css"
 
 const inter = Inter({
@@ -49,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${manrope.variable} dark`} suppressHydrationWarning>
       <body className="antialiased">
-        <SplashScreen />
+        <SplashGate />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -57,6 +58,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <ContactModal />
         </ThemeProvider>
       </body>
     </html>
