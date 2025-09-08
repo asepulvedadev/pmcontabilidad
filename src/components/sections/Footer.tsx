@@ -95,14 +95,14 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-foreground">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                <Link href="/privacidad" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   Política de Privacidad
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+                <Link href="/terminos" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   Términos de Servicio
-                </a>
+                </Link>
               </li>
             </ul>
           </motion.div>
