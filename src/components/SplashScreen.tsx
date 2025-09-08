@@ -20,20 +20,20 @@ const SplashScreen = () => {
   }, [visible])
 
   useEffect(() => {
-    // Progreso controlado hasta 100%
+    // Progreso más rápido hasta 100%
     const interval = setInterval(() => {
       setProgress((p) => {
-        const target = p < 85 ? p + Math.random() * 10 : p + Math.random() * 5
+        const target = p < 80 ? p + 14 + Math.random() * 6 : p + 8 + Math.random() * 4
         return Math.min(100, target)
       })
-    }, 100)
+    }, 60)
 
     return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
     if (progress >= 100) {
-      const timer = setTimeout(() => setVisible(false), 350) // pequeña pausa antes de salir
+      const timer = setTimeout(() => setVisible(false), 200) // pausa final más corta
       return () => clearTimeout(timer)
     }
   }, [progress])
@@ -45,14 +45,14 @@ const SplashScreen = () => {
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
           className="fixed inset-0 z-[120] flex items-center justify-center bg-background"
           aria-hidden="true"
         >
-          {/* Fondo sólido opaco para que no se vea el contenido detrás */}
+          {/* Fondo sólido opaco */}
           <div className="absolute inset-0" />
 
-          {/* Decoración interna (no transparente respecto al fondo) */}
+          {/* Decoración interna */}
           <div className="absolute -top-24 -left-24 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
 
@@ -66,7 +66,7 @@ const SplashScreen = () => {
                   className="h-full bg-gradient-to-r from-primary to-primary/70"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
-                  transition={{ ease: "easeOut", duration: 0.25 }}
+                  transition={{ ease: "easeOut", duration: 0.2 }}
                 />
                 <div className="absolute inset-0 bg-white/10 dark:bg-black/10 backdrop-blur-[1px]" />
               </div>
@@ -86,7 +86,7 @@ const SplashScreen = () => {
                   key={txt}
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 + idx * 0.1 }}
+                  transition={{ delay: 0.1 + idx * 0.08 }}
                   className="px-3 py-1 rounded-full bg-secondary/50 border border-border/50"
                 >
                   {txt}
