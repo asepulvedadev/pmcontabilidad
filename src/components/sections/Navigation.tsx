@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ThemeToggleButton } from "@/components/ThemeToggleButton"
 import Logo from "@/components/ui/Logo"
+import Link from "next/link"
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -26,7 +27,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Logo size="sm" priority />
+            <Link href="/" aria-label="Ir al inicio">
+              <Logo size="sm" priority />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

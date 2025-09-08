@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
-import Logo from "@/components/ui/Logo"
+import Image from "next/image"
+import Link from "next/link"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -26,7 +27,16 @@ const Footer = () => {
             className="lg:col-span-2"
           >
             <div className="mb-4">
-              <Logo size="sm" priority />
+              <Link href="/" aria-label="Ir al inicio" className="inline-flex">
+                <Image
+                  src="/logo-largo.svg"
+                  alt="PM Contabilidad"
+                  width={360}
+                  height={52}
+                  className="h-8 sm:h-10 w-auto"
+                  priority
+                />
+              </Link>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Soluciones contables modernas para impulsar el crecimiento de tu negocio. Nos enfocamos en la eficiencia y la claridad para darte tranquilidad financiera.
@@ -103,44 +113,26 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-border/50"
+          className="mt-12 border-t border-border/50 pt-8"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Facebook"
-              >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
+              © {currentYear} PM Contabilidad. Todos los derechos reservados.
+            </p>
+
+            <div className="flex items-center gap-4">
+              <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Twitter"
-              >
+              <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="Instagram"
-              >
+              <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                aria-label="LinkedIn"
-              >
+              <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary">
                 <Linkedin className="w-5 h-5" />
               </a>
-            </div>
-
-            <div className="text-sm text-muted-foreground">
-              <p>
-                &copy; {currentYear} PM Contabilidad. Todos los derechos reservados.
-              </p>
             </div>
           </div>
         </motion.div>

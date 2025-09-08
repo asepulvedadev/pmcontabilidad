@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Manrope } from "next/font/google"
 import { ThemeProvider } from "@/components/ThemeProvider"
+import SplashScreen from "@/components/SplashScreen"
 import "./globals.css"
 
 const inter = Inter({
@@ -48,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${manrope.variable} dark`} suppressHydrationWarning>
       <body className="antialiased">
+        <SplashScreen />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
