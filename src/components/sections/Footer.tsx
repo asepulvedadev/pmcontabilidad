@@ -1,12 +1,41 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
+// Ícono local de TikTok (SVG)
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {...props}>
+    <path d="M30 8c1.6 2.4 3.9 4.3 6.7 5.1v5.2c-2.9-.1-5.7-1-8.2-2.7v10.2c0 6.3-5.1 11.4-11.4 11.4S5.8 32.1 5.8 25.8c0-6.3 5.1-11.4 11.4-11.4 1 0 2 .1 2.9.4v5.5c-.9-.4-1.9-.6-2.9-.6-3.4 0-6.1 2.8-6.1 6.1s2.8 6.1 6.1 6.1 6.1-2.8 6.1-6.1V8h6.7Z" fill="currentColor"/>
+  </svg>
+)
+
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+
+  // Constantes de redes sociales (editar enlaces según corresponda)
+  const socialLinks: { name: string; href: string; icon: React.ReactNode; aria: string }[] = [
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61579425272155",
+      icon: <Facebook className="w-5 h-5" />,
+      aria: "Facebook",
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/pmcontabilidadmty/",
+      icon: <Instagram className="w-5 h-5" />,
+      aria: "Instagram",
+    },
+    {
+      name: "TikTok",
+      href: "https://tiktok.com/@pmcontabilidad",
+      icon: <TikTokIcon className="w-5 h-5" />,
+      aria: "TikTok",
+    },
+  ]
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -121,18 +150,11 @@ const Footer = () => {
             </p>
 
             <div className="flex items-center gap-4">
-              <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary">
-                <Linkedin className="w-5 h-5" />
-              </a>
+              {socialLinks.map((s) => (
+                <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.aria} className="text-muted-foreground hover:text-primary">
+                  {s.icon}
+                </a>
+              ))}
             </div>
           </div>
         </motion.div>
